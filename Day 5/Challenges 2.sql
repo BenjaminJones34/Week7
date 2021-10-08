@@ -1,0 +1,51 @@
+-- -- challenge 1
+-- SELECT * FROM testDB.current_job_detail cjd
+-- 	INNER JOIN testDB.laptop_detail ld
+--     ON ld.laptop_id = cjd.laptop_id;
+
+-- -- challenge 2
+-- SELECT * FROM testDB.employee_detail ed
+-- 	INNER JOIN testDB.current_job_detail cjd
+--     ON cjd.employee_id = ed.employee_id
+-- 	INNER JOIN testDB.laptop_detail ld
+--     ON ld.laptop_id = cjd.laptop_id
+-- WHERE
+-- 	ld.os = "Mac";
+
+-- -- challenge 3
+-- SELECT * FROM testDB.jobs_history jh
+-- 	INNER JOIN testDB.jobs_history jh2
+--     ON jh.employee_id = jh2.employee_id
+-- 	INNER JOIN testDB.employee_detail ed
+--     ON jh.employee_id = ed.employee_id
+-- WHERE
+-- 	jh.job_title = "Apprentice Developer"
+--     AND jh2.job_title = "Developer";
+
+-- -- challenge 4
+-- SELECT * FROM testDB.employee_detail ed
+-- 	INNER JOIN testDB.jobs_history jh
+--     ON ed.Employee_ID = jh.employee_id
+-- 	INNER JOIN testDB.current_job_detail cjd
+--     ON cjd.employee_id = ed.employee_id
+-- WHERE
+-- 	jh.job_title NOT LIKE "%Developer%"
+--     AND cjd.job_title LIKE "%Developer%";
+
+-- -- challenge 5
+-- SELECT * FROM testDB.employee_detail ed
+-- 	INNER JOIN testDB.jobs_history jh
+--     ON jh.employee_id = ed.employee_id
+--     INNER JOIN testDB.current_job_detail cjd
+-- 	ON cjd.employee_id = ed.employee_id
+-- WHERE
+-- 	jh.job_title != cjd.job_title;
+    
+-- -- challenge 6
+-- SELECT DISTINCT ed.employee_id, name, cjd.job_title FROM testDB.employee_detail ed -- i was trying to use outer apply but that does not exist for mysql i think 
+-- 	INNER JOIN testDB.jobs_history jh											-- so i tried using a nested select but was not working out because using distinct indicates your query needs work
+--     ON jh.employee_id = ed.employee_id
+--     INNER JOIN testDB.current_job_detail cjd
+-- 	ON cjd.employee_id = ed.employee_id
+-- WHERE
+-- 	jh.job_title != cjd.job_title;
