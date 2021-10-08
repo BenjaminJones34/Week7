@@ -8,7 +8,7 @@
 -- SELECT * FROM employee_detail WHERE Name LIKE "S%";
 
 -- -- challenge 5
--- SELECT employee_detail.Name FROM employee_detail JOIN jobs_history ON employee_detail.employee_ID = jobs_history.employee_id WHERE jobs_history.job_title = "Developer";
+-- SELECT employee_detail.Name FROM employee_detail JOIN jobs_history ON employee_detail.employee_ID = jobs_history.employee_id WHERE jobs_history.job_title LIKE "%Dev%";
 
 -- -- challenge 6
 -- SELECT laptop_id FROM laptop_detail WHERE os = "Ubuntu";
