@@ -12,7 +12,7 @@
 -- DELETE FROM testDB.great_names WHERE employee_id = 3;
 
 -- -- challenge 4
--- ALTER TABLE great_names ADD COLUMN great_name_ind VARCHAR(255);
+-- ALTER TABLE great_names ADD COLUMN great_name_ind CHAR(1);
 
 -- -- challenge 5
 -- INSERT INTO testDB.great_names VALUES (6, "Numpty", "Y");
